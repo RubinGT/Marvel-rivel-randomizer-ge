@@ -125,6 +125,7 @@ const App: React.FC = () => {
             onSkip={handleSkip}
             availableCharacters={availableCharacters.filter(c => c.name !== playerSSelection?.name)}
             customIcons={customIcons}
+            loadImage={loadImage}
           />
           <PlayerSection
             playerId="S"
@@ -137,6 +138,7 @@ const App: React.FC = () => {
             onSkip={() => handleSkip('S')}
             availableCharacters={availableCharacters.filter(c => c.name !== playerNSelection?.name)}
             customIcons={customIcons}
+            loadImage={loadImage}
           />
         </main>
 
