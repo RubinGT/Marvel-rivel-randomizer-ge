@@ -1,8 +1,7 @@
 import React, { useState, useCallback, useMemo, useEffect } from 'react';
 import { Modal } from './ui/Modal';
 import { CHARACTER_ROSTER } from '../constants';
-import { processImage, getLocalStorageSize } from '../services/imageService';
-import { saveImage } from '../services/imageService';
+import { processImage, getLocalStorageSize, saveImage, loadImage } from '../services/imageService';
 import type { CustomIcons } from '../types';
 
 interface AssetManagementModalProps {
@@ -55,7 +54,7 @@ const CharacterAsset: React.FC<{
                         </svg>
                      </div>
                 ) : icon ? (
-                    <img src={`/assets/${icon}`} alt={charName} className="w-24 h-24 object-cover mx-auto rounded-md" />
+                    <img src={loadImage(icon)} alt={charName} className="w-24 h-24 object-cover mx-auto rounded-md" />
                 ) : (
                     <div className="w-24 h-24 bg-gray-800 flex items-center justify-center mx-auto rounded-md">
                         <span className="text-gray-500 text-3xl font-bold">?</span>
