@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { Modal } from './ui/Modal';
 import { Button } from './ui/Button';
 import { CHARACTER_ROSTER, PLAYER_CONFIG } from '../constants';
+import { loadImage } from '../services/imageService';
 import type { HistoryEntry, CustomIcons } from '../types';
 
 interface HistoryModalProps {
@@ -16,7 +17,7 @@ interface HistoryModalProps {
 const CharacterHistoryItem: React.FC<{charName: string, icon: string | undefined}> = ({ charName, icon }) => (
     <div className="p-2 bg-gray-700/50 rounded-md text-center flex flex-col items-center justify-center">
         {icon ? (
-            <img src={icon} alt={charName} className="w-20 h-20 object-cover mx-auto rounded-md" />
+            <img src={loadImage(icon)} alt={charName} className="w-20 h-20 object-cover mx-auto rounded-md" />
         ) : (
             <div className="w-20 h-20 bg-gray-800 flex items-center justify-center mx-auto rounded-md">
                 <span className="text-gray-500 text-2xl font-bold">?</span>
