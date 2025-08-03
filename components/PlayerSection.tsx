@@ -49,6 +49,7 @@ export const PlayerSection: React.FC<PlayerSectionProps> = ({
                 customIcons={customIcons}
                 onSpinEnd={onSpinEnd}
                 theme={theme}
+                loadImage={loadImage}
             />
              <div className="mt-4 flex flex-wrap gap-2">
                 <Button 
@@ -63,6 +64,25 @@ export const PlayerSection: React.FC<PlayerSectionProps> = ({
                     disabled={isSpinning || !currentSelection}
                     className={config.buttonClasses}
                 >
+                   Skip
+                </Button>
+            </div>
+        </div>
+
+        <div className="space-y-4">
+           <div>
+                <h3 className="text-sm uppercase tracking-wider text-gray-400 mb-1">Asset Status</h3>
+                <div className={`p-3 rounded-md bg-black/30 min-h-[50px] flex items-center border ${config.borderColor}/50`}>
+                    <p className={`font-semibold text-lg ${config.textColor}`}>
+                        {currentSelection?.name || 'Awaiting Assignment'}
+                    </p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+  );
+};                >
                    Skip
                 </Button>
             </div>
