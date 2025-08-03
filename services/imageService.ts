@@ -36,7 +36,7 @@ export const saveImage = async (file: File): Promise<string> => {
     }
 };
 
-export const export const export const loadImage = (filename: string): string => {
+export const loadImage = (filename: string): string => {
     // Assuming images are served from /assets/
     return `/assets/${filename}`;
 };
